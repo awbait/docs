@@ -1,0 +1,22 @@
+site_name: DevOps docs
+
+theme:
+  name: material
+  language: ru
+
+extra:
+  homepage: https://docs.awbait.com
+
+repo_name: awbait/IaC
+repo_url: https://github.com/awbait/infrastructure-as-code
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - admonition
+  - pymdownx.details
