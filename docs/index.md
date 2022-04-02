@@ -1,17 +1,3 @@
-1# Welcome to MkDocs
+# Welcome
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Привет! Меня зовут **Андрей**! Я активно развивающийся **DevOps Engineer**. В этом документе я делюсь своим опытом, а так же использую его как записную книжку, которую можно быстро открыть и найти то что мне нужно. Но а для вас тут найдется так же прилично информации, которая поможет вам развиваться в сфере DevOps!

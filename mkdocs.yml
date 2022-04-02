@@ -2,7 +2,23 @@ site_name: DevOps docs
 
 theme:
   name: material
+  font: false
   language: ru
+  palette: 
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  icon:
+    admonition:
+      githib: fontawesome/brands/github
+
+extra_css:
+  - theme/css/icons.css
 
 extra:
   homepage: https://docs.awbait.com
@@ -11,6 +27,9 @@ repo_name: awbait/IaC
 repo_url: https://github.com/awbait/infrastructure-as-code
 
 markdown_extensions:
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -20,3 +39,5 @@ markdown_extensions:
       alternate_style: true 
   - admonition
   - pymdownx.details
+  - attr_list
+  - md_in_html
