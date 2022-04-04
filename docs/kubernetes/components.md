@@ -2,13 +2,13 @@
 
 #### Storage
 
-!!! info "[Longhorn] Cloud native distributed block storage"
+##### :k8s-longhorn: [Longhorn] Cloud native distributed block
   [Longhorn]: https://longhorn.io
 
-!!! info "[Rook] Cloud-Native Storage"
+##### :k8s-rook: [Rook] Cloud-Native Storage
   [Rook]: https://rook.io
 
 #### Certificate Management
 
-!!! info "[Cert manager]"
+##### :k8s-cert-manager: [Cert manager]
   [Cert manager]: https://cert-manager.io
