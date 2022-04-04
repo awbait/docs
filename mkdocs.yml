@@ -30,6 +30,9 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
@@ -41,3 +44,6 @@ markdown_extensions:
   - pymdownx.details
   - attr_list
   - md_in_html
+
+plugins:
+  - git-revision-date

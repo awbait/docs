@@ -36,3 +36,9 @@
   -webkit-mask-image: var(--md-admonition-icon--github);
           mask-image: var(--md-admonition-icon--github);
 }
+
+
+.twitter {
+  color: #1DA1F2;
+  font-size: 32px;
+}
