@@ -6,3 +6,11 @@
 
 !!! qbittorrent "Торрент клиент [qBitTorrent]"
   [qbittorrent]: https://www.qbittorrent.org
+
+
+!!! note "RemoteDesktop с поддержкой Direct [parsec]"
+  [parsec]: https://parsec.app/
+  
+
+##### :apps-parsec: [Parsec]
+  [Parsec]: https://parsec.app/

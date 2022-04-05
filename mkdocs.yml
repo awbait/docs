@@ -1,4 +1,4 @@
-site_name: DevOps docs
+site_name: DevOps документация
 
 theme:
   name: material
@@ -14,14 +14,30 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode
   icon:
+    logo: fontawesome/solid/infinity
     admonition:
       githib: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.indexes
 
 extra_css:
   - theme/css/icons.css
 
 extra:
   homepage: https://docs.awbait.com
+  analytics:
+    provider: google
+    property: G-RQVNP7G2PP
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/awbait
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/awbaits
+    - icon: fontawesome/brands/vk
+      link: https://vk.com/awbait
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/awbait
 
 repo_name: awbait/IaC
 repo_url: https://github.com/awbait/infrastructure-as-code
@@ -38,6 +54,11 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.tabbed:
       alternate_style: true 
   - def_list
