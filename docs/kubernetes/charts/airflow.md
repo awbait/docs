@@ -93,3 +93,58 @@ helm upgrade airflow deploy-airflow/ -n airflow
 ``` bash
 helm delete airflow -n airflow
 ```
+
+### 6. Настройка GitSync
+
+#### Создание приватного репозитория и настройка подключения к нему
+
+Сначала создаем приватный репозиторий. Далее необходимо сгенерировать SSH ключ чтобы настроить подключение к нашему репозиторию по SSH.
+
+``` bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+##### Добавляем публичный ключ к нашему репозиторию
+
+Ключ обычно находится по пути: `~/.ssh/id_rsa.pub`
+
+Выводим на экран и копируем:
+``` bash
+cat ~/.ssh/id_rsa.pub
+```
+
+Я использую GitLab поэтому открываю репозиторий -> Settings -> Repository -> Deploy Keys и добавляю наш ключ.
+
+Убедитесь что галочка "для записи" установлена.
+
+##### Редактируем и создаём secret в Kubernetes
+
+Аналогичным методом копируем приватный ключ из файла `~/.ssh/id_rsa` командой:
+
+``` bash
+cat ~/.ssh/id_rsa | base64
+```
+
+Копируем содержимое и вставляем в файл:
+
+``` yaml title="templates/airflow-ssh-secret.yaml"
+gitSshKey: <YOUR_PRIVATE_KEY_IN_BASE64>
+```
+
+##### Редактируем конфигурацию чарта
+
+``` yaml title="values.yaml"
+dags:
+gitSync:
+  enabled: true
+  repo: ssh://git@domain.ru/progect-name/repo-name.git
+  branch: main
+  rev: HEAD
+  maxFailures: 0
+  subPath: "dags"
+  sshKeySecret: airflow-ssh-secret
+```
+
+Обновляем чарт из п.4
+
+Готово.

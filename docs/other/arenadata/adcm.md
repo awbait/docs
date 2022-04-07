@@ -27,3 +27,12 @@ docker start adcm
 ``` bash
 docker stop adcm
 ```
+
+### Загрузка SSH Common Bundle
+Для дальшейшей работы с ADCM необходимо загрузить и установить SSH Common Bundle, для управления хостами через SSH
+
+Загрузить можно тут: https://store.arenadata.io/#products/arenadata_cluster_manager на вкладке Arenadata ADCM Infrastructure Bundles
+
+Установить его в систему можно на вкладке BUNDLE
+
+Далее переходим в HOSTPROVIDER и создаем провайдер
