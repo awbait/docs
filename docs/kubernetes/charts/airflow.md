@@ -14,7 +14,7 @@ CREATE DATABASE airflow with owner airflow;
 CREATE SCHEMA airflow AUTHORIZATION airflow;
 ```
 
-### 2. Конфигурация чарта:
+### 2. Конфигурация чарта: {: #conf }
 
 Так как репозитория на github'e официального чарта я не нашел. Пришлось скачать все значения чарта через команду (данный файлик уже имеется в моём чарте):
 
@@ -135,16 +135,27 @@ gitSshKey: <YOUR_PRIVATE_KEY_IN_BASE64>
 
 ``` yaml title="values.yaml"
 dags:
-gitSync:
-  enabled: true
-  repo: ssh://git@domain.ru/progect-name/repo-name.git
-  branch: main
-  rev: HEAD
-  maxFailures: 0
-  subPath: "dags"
-  sshKeySecret: airflow-ssh-secret
+  gitSync:
+    enabled: true
+    repo: ssh://git@domain.ru/progect-name/repo-name.git
+    branch: main
+    rev: HEAD
+    maxFailures: 0
+    subPath: "dags"
+    sshKeySecret: airflow-ssh-secret
 ```
 
 Обновляем чарт из п.4
 
 Готово.
+
+#### 7. Дополнительно #### {: #other }
+
+Для взаимодействия с Camunda необходимо установить переменную:
+
+``` yaml
+env:
+  - name: "AIRFLOW__API__AUTH_BACKEND"
+    value: "airflow.api.auth.backend.basic_auth"
+```
+Документация параметра: [https://airflow.apache.org/docs/apache-airflow/stable/security/api.html](https://airflow.apache.org/docs/apache-airflow/stable/security/api.html)
