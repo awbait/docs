@@ -13,3 +13,29 @@ or
 or
 \du+
 ```
+
+```
+REVOKE ALL PRIVILEGES ON ALL TABLES IN SCHEMA public FROM ryan;
+REVOKE ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public FROM ryan;
+REVOKE ALL PRIVILEGES ON ALL FUNCTIONS IN SCHEMA public FROM ryan;
+REVOKE ALL PRIVILEGES ON DATABASE <my_db> FROM <my_user>;
+
+
+```
+
+ALTER USER user_name WITH PASSWORD 'new_password';
+
+
+``` sql
+GRANT USAGE ON SCHEMA rdmrwa_outrrm TO rwa_user;
+GRANT ALL ON ALL TABLES IN SCHEMA rdmrwa_outrrm TO rwa_user;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA rdmrwa_outrrm TO rwa_user;
+ALTER DEFAULT PRIVILEGES FOR ROLE rwa_user IN SCHEMA rdmrwa_outrrm GRANT ALL ON TABLES TO rwa_user;
+ALTER DEFAULT PRIVILEGES FOR ROLE rwa_user IN SCHEMA rdmrwa_outrrm GRANT ALL ON SEQUENCES TO rwa_user;
+```
+
+GRANT USAGE ON SCHEMA arenadata_toolkit TO rwa_user;
+GRANT ALL ON ALL TABLES IN SCHEMA arenadata_toolkit TO rwa_user;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA arenadata_toolkit TO rwa_user;
+ALTER DEFAULT PRIVILEGES FOR ROLE rwa_user IN SCHEMA arenadata_toolkit GRANT ALL ON TABLES TO rwa_user;
+ALTER DEFAULT PRIVILEGES FOR ROLE rwa_user IN SCHEMA arenadata_toolkit GRANT ALL ON SEQUENCES TO rwa_user;
