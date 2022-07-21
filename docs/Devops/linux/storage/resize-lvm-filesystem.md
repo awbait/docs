@@ -7,7 +7,7 @@ yum install -y cloud-utils-growpart
 
 ### 1. Проверяем диск и структуру
 
-Смотрим какой динужно расширить:
+Смотрим какой диск нужно расширить:
 ```
 [root@test-bi opt]# lsblk
 NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT

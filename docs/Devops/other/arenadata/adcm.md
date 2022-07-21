@@ -36,3 +36,16 @@ docker stop adcm
 Установить его в систему можно на вкладке BUNDLE
 
 Далее переходим в HOSTPROVIDER и создаем провайдер
+
+### Создание SSH ключа
+
+mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys
+
+chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys
+
+vim ~/.ssh/authorized_keys
+
+Сгенерировать ключ:
+ssh-keygen -t rsa
+
+ssh-copy-id root@server
